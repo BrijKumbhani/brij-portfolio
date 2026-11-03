@@ -42,33 +42,55 @@ const Hero = () => {
                     Brij Kumbhani — Data Science Portfolio
                 </motion.p>
 
-                <h1 className="mt-6 font-display font-semibold leading-[0.92] tracking-tighter">
-                    <span className="mask-line">
-                        <motion.span custom={0} variants={line} initial="hidden" animate="show" className="text-[17vw] md:text-[10.5rem]">
-                            Data
-                        </motion.span>
-                    </span>
-                    <span className="mask-line">
-                        <motion.span custom={1} variants={line} initial="hidden" animate="show" className="text-[17vw] italic text-primary md:text-[10.5rem]">
-                            Scientist
-                        </motion.span>
-                    </span>
-                </h1>
+                <div className="grid gap-10 md:grid-cols-12 md:items-end">
+                    <h1 className="mt-6 font-display font-semibold leading-[0.92] tracking-tighter md:col-span-8">
+                        <span className="mask-line">
+                            <motion.span custom={0} variants={line} initial="hidden" animate="show" className="text-[17vw] md:text-[10.5rem]">
+                                Data
+                            </motion.span>
+                        </span>
+                        <span className="mask-line">
+                            <motion.span custom={1} variants={line} initial="hidden" animate="show" className="text-[17vw] italic text-primary md:text-[10.5rem]">
+                                Scientist
+                            </motion.span>
+                        </span>
+                    </h1>
+                    <motion.div
+                        initial={{ opacity: 0, y: 24 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.7, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                        className="relative hidden md:col-span-4 md:block"
+                        data-testid="hero-headshot"
+                    >
+                        <div className="absolute -left-3 -top-3 h-full w-full border border-primary" aria-hidden="true" />
+                        <div className="relative overflow-hidden border border-foreground">
+                            <img
+                                src="/brij-headshot.png"
+                                alt="Brij Kumbhani"
+                                className="h-80 w-full object-cover object-top lg:h-[26rem]"
+                                loading="eager"
+                            />
+                        </div>
+                        <p className="absolute -bottom-4 left-4 bg-primary px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-primary-foreground">
+                            Brij Kumbhani
+                        </p>
+                    </motion.div>
+                </div>
 
                 <div className="mt-10 grid items-end gap-10 pb-20 md:grid-cols-12 md:pb-28">
                     <motion.div
                         initial={{ opacity: 0, y: 24 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.7, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                        className="flex flex-col gap-8 md:col-span-5"
+                        className="md:col-span-5"
                     >
-                        <div className="relative w-fit" data-testid="hero-headshot">
+                        <div className="relative w-fit md:hidden" data-testid="hero-headshot-mobile">
                             <div className="absolute -left-3 -top-3 h-full w-full border border-primary" aria-hidden="true" />
                             <div className="relative overflow-hidden border border-foreground">
                                 <img
                                     src="/brij-headshot.png"
                                     alt="Brij Kumbhani"
-                                    className="h-64 w-52 object-cover object-top md:h-80 md:w-64"
+                                    className="h-64 w-52 object-cover object-top"
                                     loading="eager"
                                 />
                             </div>
@@ -78,7 +100,7 @@ const Hero = () => {
                         </div>
                         <p
                             data-testid="hero-subline"
-                            className="max-w-md text-base leading-relaxed text-muted-foreground md:text-lg"
+                            className="mt-8 max-w-md text-base leading-relaxed text-muted-foreground md:mt-0 md:text-lg"
                         >
                             MSc Data Science @ University of Greenwich.
                             Open to part-time roles in the UK now, and full-time from September 2027.
@@ -89,7 +111,7 @@ const Hero = () => {
                         initial={{ opacity: 0, y: 24 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.7, delay: 0.75, ease: [0.22, 1, 0.36, 1] }}
-                        className="flex flex-wrap items-center gap-4 self-end md:col-span-7 md:justify-end"
+                        className="flex flex-wrap items-center gap-4 md:col-span-7 md:justify-end"
                     >
                         <button
                             type="button"
