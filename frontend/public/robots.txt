@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://data-portfolio-v2--79q1db60.preview.emergentagent.com/sitemap.xml
