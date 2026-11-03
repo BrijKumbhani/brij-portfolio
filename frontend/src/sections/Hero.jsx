@@ -32,16 +32,6 @@ const Hero = () => {
             </motion.span>
 
             <div className="relative mx-auto max-w-7xl px-5 md:px-10">
-                <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 0.1 }}
-                    data-testid="hero-overline"
-                    className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground"
-                >
-                    Brij Kumbhani — Data Science Portfolio
-                </motion.p>
-
                 <div className="grid gap-10 md:grid-cols-12 md:items-end">
                     <h1 className="mt-6 font-display font-semibold leading-[0.92] tracking-tighter md:col-span-8">
                         <span className="mask-line">
