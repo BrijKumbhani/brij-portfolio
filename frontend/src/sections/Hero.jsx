@@ -55,17 +55,31 @@ const Hero = () => {
                     </span>
                 </h1>
 
-                <div className="mt-10 grid gap-10 pb-20 md:grid-cols-12 md:pb-28">
-                    <motion.p
-                        initial={{ opacity: 0, y: 24 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.7, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                        data-testid="hero-subline"
-                        className="max-w-md text-base leading-relaxed text-muted-foreground md:col-span-5 md:text-lg"
-                    >
-                        MSc Data Science @ University of Greenwich.
-                        Open to part-time roles in the UK now, and full-time from September 2027.
-                    </motion.p>
+                <div className="mt-10 grid items-end gap-10 pb-20 md:grid-cols-12 md:pb-28">
+                    <div className="md:col-span-5">
+                        <motion.div
+                            initial={{ opacity: 0, y: 24 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.7, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                            className="flex items-end gap-6"
+                        >
+                            <div className="overflow-hidden border border-border" data-testid="hero-headshot">
+                                <img
+                                    src="/brij-headshot.png"
+                                    alt="Brij Kumbhani"
+                                    className="h-36 w-28 object-cover object-top md:h-44 md:w-36"
+                                    loading="eager"
+                                />
+                            </div>
+                            <p
+                                data-testid="hero-subline"
+                                className="max-w-md text-base leading-relaxed text-muted-foreground md:text-lg"
+                            >
+                                MSc Data Science @ University of Greenwich.
+                                Open to part-time roles in the UK now, and full-time from September 2027.
+                            </p>
+                        </motion.div>
+                    </div>
 
                     <motion.div
                         initial={{ opacity: 0, y: 24 }}
