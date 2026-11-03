@@ -56,36 +56,40 @@ const Hero = () => {
                 </h1>
 
                 <div className="mt-10 grid items-end gap-10 pb-20 md:grid-cols-12 md:pb-28">
-                    <div className="md:col-span-5">
-                        <motion.div
-                            initial={{ opacity: 0, y: 24 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.7, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                            className="flex items-end gap-6"
-                        >
-                            <div className="overflow-hidden border border-border" data-testid="hero-headshot">
+                    <motion.div
+                        initial={{ opacity: 0, y: 24 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.7, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                        className="flex flex-col gap-8 md:col-span-5"
+                    >
+                        <div className="relative w-fit" data-testid="hero-headshot">
+                            <div className="absolute -left-3 -top-3 h-full w-full border border-primary" aria-hidden="true" />
+                            <div className="relative overflow-hidden border border-foreground">
                                 <img
                                     src="/brij-headshot.png"
                                     alt="Brij Kumbhani"
-                                    className="h-36 w-28 object-cover object-top md:h-44 md:w-36"
+                                    className="h-64 w-52 object-cover object-top md:h-80 md:w-64"
                                     loading="eager"
                                 />
                             </div>
-                            <p
-                                data-testid="hero-subline"
-                                className="max-w-md text-base leading-relaxed text-muted-foreground md:text-lg"
-                            >
-                                MSc Data Science @ University of Greenwich.
-                                Open to part-time roles in the UK now, and full-time from September 2027.
+                            <p className="absolute -bottom-4 left-4 bg-primary px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-primary-foreground">
+                                Brij Kumbhani
                             </p>
-                        </motion.div>
-                    </div>
+                        </div>
+                        <p
+                            data-testid="hero-subline"
+                            className="max-w-md text-base leading-relaxed text-muted-foreground md:text-lg"
+                        >
+                            MSc Data Science @ University of Greenwich.
+                            Open to part-time roles in the UK now, and full-time from September 2027.
+                        </p>
+                    </motion.div>
 
                     <motion.div
                         initial={{ opacity: 0, y: 24 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.7, delay: 0.75, ease: [0.22, 1, 0.36, 1] }}
-                        className="flex flex-wrap items-center gap-4 md:col-span-7 md:justify-end"
+                        className="flex flex-wrap items-center gap-4 self-end md:col-span-7 md:justify-end"
                     >
                         <button
                             type="button"
